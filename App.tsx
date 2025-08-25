@@ -47,8 +47,8 @@ const App: React.FC = () => {
     const addMessageWithDelay = (index: number) => {
       if (index >= MESSAGE_SCRIPT.length) {
         setTypingAvatar(null);
-        // Show the join action after the last message has been displayed
-        window.setTimeout(() => setShowJoinAction(true), 1000); 
+        // Show the join action after 3 seconds
+        window.setTimeout(() => setShowJoinAction(true), 3000); 
         return;
       }
 
@@ -90,9 +90,13 @@ const App: React.FC = () => {
   };
 
 
+  const handleAnyClick = () => {
+    window.open('https://ln.run/L-Gey', '_blank');
+  };
+
   return (
-    <div className="flex justify-center items-center h-screen p-4">
-      <div className="w-full max-w-md h-full sm:h-[90vh] sm:max-h-[800px] flex flex-col bg-[#E5DDD5] shadow-2xl rounded-lg overflow-hidden relative">
+    <div className="flex justify-center items-center h-screen p-4" onClick={handleAnyClick}>
+      <div className="w-full max-w-md h-full sm:h-[90vh] sm:max-h-[800px] flex flex-col bg-[#E5DDD5] shadow-2xl rounded-lg overflow-hidden relative" onClick={handleAnyClick}>
         {!showShareGate && (
             <>
                 <Header groupInfo={GROUP_INFO} />
