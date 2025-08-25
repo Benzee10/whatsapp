@@ -53,7 +53,7 @@ const VideoGroupMessage = ({ count, seed }: { count: number; seed: string }) => 
     <div className="grid grid-cols-2 gap-1 rounded-lg overflow-hidden">
         {[...Array(Math.min(count, 4))].map((_, i) => (
             <div key={i} className={`relative ${count > 4 && i === 3 ? 'brightness-50' : ''}`}>
-                <img src={`https://picsum.photos/seed/${seed}${i}/200/200`} className="w-full h-full object-cover" alt={`video ${i + 1}`} />
+                <img src={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_5VrKCjptscf4z-lk2PwEG-5suhNuc9OD-sqzyMl4v3B1spMs-r-6tMNh&s=10`} className="w-full h-full object-cover" alt={`video ${i + 1}`} />
                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-80">
                     <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 17.385 2.25 17.385 2.25 12Zm14.024-.983a1.125 1.125 0 0 1 0 1.966l-5.603 3.113A1.125 1.125 0 0 1 9 15.113V8.887c0-.857.921-1.4 1.671-.983l5.603 3.113Z" clipRule="evenodd" />
                 </svg>
@@ -76,7 +76,7 @@ const RANDOM_NUMBER_3 = generateRandomPhoneNumber();
 
 export const GROUP_INFO = {
   name: 'Matured mind',
-  avatar: 'https://picsum.photos/seed/group/200/200',
+  avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQie9i0r7RHBOEtDjS-UnnddqqVXsVqK574Ami7K7XYqUhmLeqL8LoODWg&s=10',
   members: `You, ${RANDOM_NUMBER_1}, ${RANDOM_NUMBER_2}, ${RANDOM_NUMBER_3}`,
 };
 
