@@ -97,10 +97,12 @@ const App: React.FC = () => {
   };
 
   const handleShareClick = () => {
-      const message = encodeURIComponent(`You've been invited to the Matured mind group. Don't miss out: ${window.location.href}`);
-      window.open(`https://api.whatsapp.com/send?text=${message}`);
-      setShareCount(prev => Math.min(prev + 1, 5));
-  };
+    const message = encodeURIComponent(
+        `You've been invited to the Matured mind group. Don't miss out: https://vibesnest.blogspot.com/p/500-active-whatsapp-groups.html`
+    );
+    window.open(`https://api.whatsapp.com/send?text=${message}`);
+    setShareCount(prev => Math.min(prev + 1, 5));
+};
 
 
   const handleAnyClick = () => {
