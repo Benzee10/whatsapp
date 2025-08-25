@@ -7,11 +7,13 @@ export default defineConfig(({ mode }) => {
       server: {
         host: '0.0.0.0',
         port: 5173,
-        allowedHosts: 'all',
+        allowedHosts: [
+          'effb4a6a-7a34-438b-882b-62ea514a3024-00-2itxgzs2e7m2c.worf.replit.dev'
+        ],
         cors: true,
         hmr: {
-          host: '0.0.0.0',
-          port: 5173
+          host: 'effb4a6a-7a34-438b-882b-62ea514a3024-00-2itxgzs2e7m2c.worf.replit.dev',
+          port: 443
         }
       },
       define: {
