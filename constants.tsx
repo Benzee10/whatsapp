@@ -116,6 +116,11 @@ export const MESSAGE_SCRIPT: Omit<Message, 'id'>[] = [
     },
     {
         ...SENDER_1,
+        text: <PhotoGroupMessage count={8} seed="private_pics" />,
+        timestamp: '11:17 PM',
+    },
+    {
+        ...SENDER_1,
         text: <VideoGroupMessage count={3} seed="exclusive_content1" />,
         timestamp: '11:17 PM',
     },
@@ -140,6 +145,11 @@ export const MESSAGE_SCRIPT: Omit<Message, 'id'>[] = [
         timestamp: '11:19 PM',
     },
     {
+        ...SENDER_3,
+        text: <PhotoGroupMessage count={9} seed="exclusive_shots" />,
+        timestamp: '11:19 PM',
+    },
+    {
         ...SENDER_1,
         text: <VideoGroupMessage count={4} seed="hidden_clips" />,
         timestamp: '11:20 PM',
@@ -152,6 +162,16 @@ export const MESSAGE_SCRIPT: Omit<Message, 'id'>[] = [
     {
         ...SENDER_2,
         text: "Just the beginning. The real unfiltered content is in the private feed. Only a few spots left.",
+        timestamp: '11:21 PM',
+    },
+    {
+        ...SENDER_1,
+        text: <PhotoGroupMessage count={15} seed="mega_gallery" />,
+        timestamp: '11:21 PM',
+    },
+    {
+        ...SENDER_3,
+        text: <PhotoGroupMessage count={7} seed="behind_scenes" />,
         timestamp: '11:21 PM',
     },
     {
