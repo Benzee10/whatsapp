@@ -1,0 +1,5 @@
+{
+  "name": "WhatsApp Chat Simulator",
+  "description": "A React application that simulates a WhatsApp conversation, demonstrating a scripted chat flow with a realistic user interface.",
+  "requestFramePermissions": []
+}
