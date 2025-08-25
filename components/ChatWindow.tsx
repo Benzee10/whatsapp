@@ -16,7 +16,7 @@ const JoinGroupOverlay = ({ onJoinClick }: { onJoinClick: () => void }) => (
         {/* Group Avatar with Online Indicator */}
         <div className="relative mb-6 flex justify-center">
           <img 
-            src="https://picsum.photos/seed/group/80/80" 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQie9i0r7RHBOEtDjS-UnnddqqVXsVqK574Ami7K7XYqUhmLeqL8LoODWg&s=10" 
             alt="Group Avatar" 
             className="w-20 h-20 rounded-full border-2 border-gray-200"
           />
