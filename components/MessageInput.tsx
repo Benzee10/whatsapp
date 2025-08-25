@@ -30,21 +30,30 @@ const MicIcon = () => (
 
 const MessageInput: React.FC = () => {
   return (
-    <div className="bg-[#F0F0F0] p-3 flex items-center space-x-3">
-      <div className="flex-grow flex items-center bg-white rounded-full px-4 py-3 shadow-sm">
-        <SmileyIcon />
+    <div className="bg-[#F0F0F0] p-3 sm:p-3 flex items-center space-x-3 safe-area-bottom">
+      <div className="flex-grow flex items-center bg-white rounded-full px-4 py-3 shadow-sm min-h-[48px]">
+        <button className="p-1 -ml-1 touch-manipulation">
+          <SmileyIcon />
+        </button>
         <input
           type="text"
           placeholder="Message"
           disabled
-          className="bg-transparent flex-grow mx-3 text-gray-700 outline-none placeholder-gray-400"
+          className="bg-transparent flex-grow mx-3 text-gray-700 outline-none placeholder-gray-400 text-base"
         />
-        <PaperclipIcon />
-        <CameraIcon />
+        <button className="p-1 touch-manipulation">
+          <PaperclipIcon />
+        </button>
+        <button className="p-1 touch-manipulation">
+          <CameraIcon />
+        </button>
       </div>
-      <button className="bg-[#075E54] w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
+      <button className="bg-[#075E54] w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg touch-manipulation active:bg-[#128C7E] transition-colors">
         <MicIcon />
       </button>
+      <style>{`
+        .safe-area-bottom { padding-bottom: max(0.75rem, env(safe-area-inset-bottom)); }
+      `}</style>
     </div>
   );
 };

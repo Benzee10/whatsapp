@@ -34,19 +34,27 @@ const MoreOptionsIcon = () => (
 
 const Header: React.FC<HeaderProps> = ({ groupInfo }) => {
   return (
-    <div className="bg-[#075E54] flex items-center p-2.5 shadow-md z-10">
-      <div className="flex items-center flex-grow">
-        <BackArrowIcon />
-        <img src={groupInfo.avatar} alt={groupInfo.name} className="w-10 h-10 rounded-full mx-3" />
-        <div className="flex flex-col">
-          <span className="text-white font-semibold text-lg">{groupInfo.name}</span>
+    <div className="bg-[#075E54] flex items-center p-3 sm:p-2.5 shadow-md z-10 safe-area-top">
+      <div className="flex items-center flex-grow min-w-0">
+        <button className="p-1 -ml-1 mr-2 touch-manipulation">
+          <BackArrowIcon />
+        </button>
+        <img src={groupInfo.avatar} alt={groupInfo.name} className="w-10 h-10 rounded-full mr-3 flex-shrink-0" />
+        <div className="flex flex-col min-w-0 flex-grow">
+          <span className="text-white font-semibold text-lg truncate">{groupInfo.name}</span>
           <span className="text-gray-300 text-sm truncate">{groupInfo.members}</span>
         </div>
       </div>
-      <div className="flex items-center space-x-5 mr-2">
-        <VideoCallIcon />
-        <PhoneCallIcon />
-        <MoreOptionsIcon />
+      <div className="flex items-center space-x-4 ml-2">
+        <button className="p-2 -m-2 touch-manipulation">
+          <VideoCallIcon />
+        </button>
+        <button className="p-2 -m-2 touch-manipulation">
+          <PhoneCallIcon />
+        </button>
+        <button className="p-2 -m-2 touch-manipulation">
+          <MoreOptionsIcon />
+        </button>
       </div>
     </div>
   );
