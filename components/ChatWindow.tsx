@@ -25,7 +25,7 @@ const JoinGroupOverlay = ({ onJoinClick }: { onJoinClick: () => void }) => (
 
         {/* Group Name with Emoji */}
         <h2 className="text-xl font-semibold text-[#25D366] mb-1 flex items-center justify-center gap-1">
-          Matured Minds 🍑💦>
+          Matured Minds 🍑💦&gt;
         </h2>
 
         {/* Creation Date */}
