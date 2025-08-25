@@ -15,7 +15,7 @@ const VoiceMessage = ({ duration }: { duration: string }) => (
     <div className="flex items-center w-48">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-white bg-green-500 rounded-full p-1 mr-2 flex-shrink-0">
             <path d="M10.5 18.75a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5h-3Z" />
-            <path fillRule="evenodd" d="M8.625.75A3.375 3.375 0 0 0 5.25 4.125v15.75a3.375 3.375 0 0 0 3.375 3.375h6.75a3.375 3.375 0 0 0 3.375-3.375V4.125A3.375 3.375 0 0 0 15.375.75h-6.75ZM7.5 4.125a.375.375 0 0 1 .375-.375h6.75a.375.375 0 0 1 .375.375v15.75a.375.375 0 0 1-.375.375h-6.75a.375.375 0 0 1-.375-.375V4.125Z" clipRule="evenodd" />
+            <path fillRule="evenodd" d="M8.625.75A3.375 3.375 0 0 0 5.25 4.125v15.75a3.375 3.375 0 0 0 3.375 3.375h6.75a3.375 3.375 0 0 0 3.375-3.375V4.125A3.375 3.375 0 0 0 15.375.75h-6.75ZM7.5 4.125a.375.375 0 0 1 .375-.375h6.75a.375.375 0 0 1 .375.375V4.125a.375.375 0 0 1-.375.375h-6.75a.375.375 0 0 1-.375-.375V4.125Z" clipRule="evenodd" />
         </svg>
         <div className="flex-grow h-1 bg-gray-300 rounded-full relative">
             <div className="absolute top-0 left-0 h-1 bg-green-500 rounded-full w-3/4"></div>
@@ -25,20 +25,29 @@ const VoiceMessage = ({ duration }: { duration: string }) => (
     </div>
 );
 
-const PhotoGroupMessage = ({ count, seed }: { count: number; seed: string }) => (
-    <div className="grid grid-cols-2 gap-1 rounded-lg overflow-hidden">
-        {[...Array(Math.min(count, 4))].map((_, i) => (
-            <div key={i} className={`relative ${count > 4 && i === 3 ? 'brightness-50' : ''}`}>
-                <img src={`https://picsum.photos/seed/${seed}${i}/200/200`} className="w-full h-full object-cover" alt={`photo ${i + 1}`} />
-                {count > 4 && i === 3 && (
-                    <div className="absolute inset-0 flex items-center justify-center text-white text-3xl font-bold">
-                        +{count - 3}
-                    </div>
-                )}
-            </div>
-        ))}
-    </div>
-);
+const PhotoGroupMessage = ({ count, seed }: { count: number; seed: string }) => {
+    const imageUrls = [
+        'https://images.unsplash.com/photo-1494790108755-2616c04b9914?w=200&h=200&fit=crop',
+        'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&h=200&fit=crop',
+        'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=200&h=200&fit=crop',
+        'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=200&h=200&fit=crop'
+    ];
+
+    return (
+        <div className="grid grid-cols-2 gap-1 rounded-lg overflow-hidden">
+            {[...Array(Math.min(count, 4))].map((_, i) => (
+                <div key={i} className={`relative ${count > 4 && i === 3 ? 'brightness-50' : ''}`}>
+                    <img src={imageUrls[i] || `https://picsum.photos/seed/${seed}${i}/200/200`} className="w-full h-full object-cover" alt={`photo ${i + 1}`} />
+                    {count > 4 && i === 3 && (
+                        <div className="absolute inset-0 flex items-center justify-center text-white text-3xl font-bold">
+                            +{count - 3}
+                        </div>
+                    )}
+                </div>
+            ))}
+        </div>
+    );
+};
 
 const VideoGroupMessage = ({ count, seed }: { count: number; seed: string }) => (
     <div className="grid grid-cols-2 gap-1 rounded-lg overflow-hidden">
