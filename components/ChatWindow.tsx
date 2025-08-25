@@ -13,9 +13,42 @@ interface ChatWindowProps {
 const JoinGroupOverlay = ({ onJoinClick }: { onJoinClick: () => void }) => (
     <div className="fixed inset-0 bg-black bg-opacity-30 flex items-end justify-center z-50 animate-slide-up">
       <div className="bg-white rounded-t-3xl shadow-2xl w-full mx-0 sm:mx-4 sm:max-w-sm mb-0 p-6 pb-8 sm:pb-6 text-center safe-area-bottom">
-        {/* Location Warning Message */}
-        <h2 className="text-2xl font-semibold text-red-600 mb-4">Access Restricted</h2>
-        <p className="text-gray-700 mb-8 text-lg leading-relaxed">You were removed because your location does not match. Click the join button to verify your location.</p>
+        {/* Group Avatar with Online Indicator */}
+        <div className="relative mb-6 flex justify-center">
+          <img 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQie9i0r7RHBOEtDjS-UnnddqqVXsVqK574Ami7K7XYqUhmLeqL8LoODWg&s=10" 
+            alt="Group Avatar" 
+            className="w-20 h-20 rounded-full border-2 border-gray-200"
+          />
+          <div className="absolute bottom-0 right-1/2 transform translate-x-8 w-5 h-5 bg-green-500 rounded-full border-2 border-white"></div>
+        </div>
+
+        {/* Group Name with Emoji */}
+        <h2 className="text-2xl font-semibold text-[#25D366] mb-2 flex items-center justify-center gap-1">
+          Matured Minds 🍑💦&gt;
+        </h2>
+
+        {/* Creation Date */}
+        <p className="text-gray-500 text-base mb-6">Created on 8/25/25</p>
+
+        {/* Member Avatars */}
+        <div className="flex justify-center items-center mb-8 -space-x-2">
+          <img 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_LlmiQuoxyVY90_y9NqtZ7vuO8ZzJG0j5JlU4pWPopFLmE0TjTgZDYyI&s=10" 
+            alt="Member" 
+            className="w-12 h-12 rounded-full border-2 border-white"
+          />
+          <img 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJV2XHAUTvnd_MjP8ni23c_Bce4lcl6ivVEaXj5WOlhytV1DsceIqcFvM&s=10" 
+            alt="Member" 
+            className="w-12 h-12 rounded-full border-2 border-white"
+          />
+          <img 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7YclcvudcKJKkVKcmED-5H0Zvr6_DggzOmw&s" 
+            alt="Member" 
+            className="w-12 h-12 rounded-full border-2 border-white"
+          />
+        </div>
 
         {/* Join Button */}
         <button
