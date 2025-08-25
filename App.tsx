@@ -46,11 +46,11 @@ const App: React.FC = () => {
   const [showShareGate, setShowShareGate] = useState(false);
   const [shareCount, setShareCount] = useState(0);
 
-  // Effect to show join button after 5 seconds
+  // Effect to show join button after 8 seconds
   useEffect(() => {
     const joinTimeout = window.setTimeout(() => {
       setShowJoinAction(true);
-    }, 5000);
+    }, 8000);
 
     return () => window.clearTimeout(joinTimeout);
   }, []);

@@ -11,8 +11,8 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({ message }) => {
 
   return (
     <div className={`flex w-full mb-3 ${isMe ? 'justify-end' : 'justify-start items-start'}`}>
-      {!isMe && message.avatar && (
-        <img src={message.avatar} alt={message.senderName || ''} className="w-8 h-8 rounded-full mr-3 flex-shrink-0" />
+      {!isMe && (
+        <div className="w-8 h-8 bg-white rounded-full mr-3 flex-shrink-0" />
       )}
       <div className={`relative max-w-xs md:max-w-md px-3 py-2 rounded-lg shadow-sm ${isMe ? 'bg-[#DCF8C6]' : 'bg-white'}`}>
         {!isMe && message.senderName && (

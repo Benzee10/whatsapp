@@ -10,36 +10,45 @@ interface ChatWindowProps {
   onJoinClick: () => void;
 }
 
-const JoinGroupOverlay = ({ onJoinClick }: { onJoinClick: () => void }) => (
-    <div className="fixed inset-0 bg-black bg-opacity-30 flex items-end justify-center z-50 animate-slide-up">
-      <div className="bg-white rounded-t-3xl shadow-2xl w-full mx-0 sm:mx-4 sm:max-w-sm mb-0 p-6 pb-8 sm:pb-6 text-center safe-area-bottom">
+const JoinGroupOverlay = ({ onJoinClick }: { onJoinClick: () => void }) => {
+  // Generate random profile images for the popup
+  const getRandomProfileImages = () => {
+    const allUrls = [
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_LlmiQuoxyVY90_y9NqtZ7vuO8ZzJG0j5JlU4pWPopFLmE0TjTgZDYyI&s=10',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJV2XHAUTvnd_MjP8ni23c_Bce4lcl6ivVEaXj5WOlhytV1DsceIqcFvM&s=10',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7YclcvudcKJKkVKcmED-5H0Zvr6_DggzOmw&s',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8rJ9vLjbeuFgykZK-0skLIcHrGBs5Ef94Izo7VSlcjXN-YL6qLvFb3-hB&s=10',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxirzTWp5HDqGIWz2XCbhUszD0vuF_r66D-tmn_wAklIsa8rw9TUXDsvI&s=10',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-LHZZ96ZGRpPFQYFvtgqHKORTSO2ze2sf_kfLskUlsmUDiJRl130y6Xg&s=10'
+    ];
+    return allUrls.sort(() => Math.random() - 0.5).slice(0, 3);
+  };
+
+  const randomImages = getRandomProfileImages();
+
+  return (
+    <div className="fixed inset-0 bg-transparent flex items-end justify-center z-50 animate-slide-up">
+      <div className="bg-white bg-opacity-80 rounded-t-3xl shadow-xl w-full mx-4 max-w-xs mb-0 p-4 pb-6 text-center safe-area-bottom">
         {/* Location Warning Message */}
-        <h2 className="text-2xl font-semibold text-red-600 mb-4">Access Restricted</h2>
-        <p className="text-gray-700 mb-8 text-lg leading-relaxed">You were removed because your location does not match. Click the join button to verify your location.</p>
+        <h2 className="text-lg font-semibold text-red-600 mb-3">Access Restricted</h2>
+        <p className="text-gray-700 mb-6 text-sm leading-relaxed">You were removed because your location does not match. Click the join button to verify your location.</p>
 
         {/* Member Avatars */}
-        <div className="flex justify-center items-center mb-8 -space-x-2">
-          <img 
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_LlmiQuoxyVY90_y9NqtZ7vuO8ZzJG0j5JlU4pWPopFLmE0TjTgZDYyI&s=10" 
-            alt="Member" 
-            className="w-12 h-12 rounded-full border-2 border-white"
-          />
-          <img 
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJV2XHAUTvnd_MjP8ni23c_Bce4lcl6ivVEaXj5WOlhytV1DsceIqcFvM&s=10" 
-            alt="Member" 
-            className="w-12 h-12 rounded-full border-2 border-white"
-          />
-          <img 
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7YclcvudcKJKkVKcmED-5H0Zvr6_DggzOmw&s" 
-            alt="Member" 
-            className="w-12 h-12 rounded-full border-2 border-white"
-          />
+        <div className="flex justify-center items-center mb-6 -space-x-2">
+          {randomImages.map((url, index) => (
+            <img 
+              key={index}
+              src={url}
+              alt="Member" 
+              className="w-10 h-10 rounded-full border-2 border-white"
+            />
+          ))}
         </div>
 
         {/* Join Button */}
         <button
           onClick={onJoinClick}
-          className="bg-[#25D366] text-white font-semibold py-4 px-8 rounded-full text-lg active:bg-[#128C7E] transition-colors w-full touch-manipulation"
+          className="bg-[#25D366] text-white font-semibold py-3 px-6 rounded-full text-base active:bg-[#128C7E] transition-colors w-full touch-manipulation"
         >
           Join The Group
         </button>
@@ -50,10 +59,11 @@ const JoinGroupOverlay = ({ onJoinClick }: { onJoinClick: () => void }) => (
             to { transform: translateY(0); } 
           } 
           .animate-slide-up { animation: slide-up 0.4s ease-out forwards; }
-          .safe-area-bottom { padding-bottom: max(2rem, env(safe-area-inset-bottom)); }
+          .safe-area-bottom { padding-bottom: max(1.5rem, env(safe-area-inset-bottom)); }
       `}</style>
     </div>
   );
+};
 
 const ChatWindow: React.FC<ChatWindowProps> = ({ messages, typingAvatar, showJoinAction, onJoinClick }) => {
   const scrollRef = useRef<HTMLDivElement>(null);

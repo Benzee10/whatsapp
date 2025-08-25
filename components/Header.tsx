@@ -39,9 +39,8 @@ const Header: React.FC<HeaderProps> = ({ groupInfo }) => {
         <button className="p-1 -ml-1 mr-2 touch-manipulation">
           <BackArrowIcon />
         </button>
-        <img src={groupInfo.avatar} alt={groupInfo.name} className="w-10 h-10 rounded-full mr-3 flex-shrink-0" />
+        <div className="w-10 h-10 bg-white rounded-full mr-3 flex-shrink-0" />
         <div className="flex flex-col min-w-0 flex-grow">
-          <span className="text-white font-semibold text-lg truncate">{groupInfo.name}</span>
           <span className="text-gray-300 text-sm truncate">{groupInfo.members}</span>
         </div>
       </div>
