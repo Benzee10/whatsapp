@@ -160,7 +160,7 @@ const allImageUrls = [
 ];
 
 const getRandomImages = (seed: string, count: number) => {
-    // Create a simple hash from the seed to get consistent but different results per seed
+    // Create a hash from the seed combined with current timestamp for true randomness
     let hash = 0;
     for (let i = 0; i < seed.length; i++) {
         const char = seed.charCodeAt(i);
@@ -168,13 +168,13 @@ const getRandomImages = (seed: string, count: number) => {
         hash = hash & hash; // Convert to 32-bit integer
     }
     
-    // Add current hour to seed for some variation each hour
-    const hourSeed = hash + new Date().getHours();
+    // Add current timestamp and random factor for true randomness each time
+    const randomSeed = hash + Date.now() + Math.random() * 10000;
     
-    // Shuffle the array based on the seed
+    // Shuffle the array using Fisher-Yates algorithm with true randomness
     const shuffled = [...allImageUrls];
     for (let i = shuffled.length - 1; i > 0; i--) {
-        const j = Math.floor(((hourSeed + i) * 9301 + 49297) % 233280 / 233280) * (i + 1);
+        const j = Math.floor(Math.random() * (i + 1));
         [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
     
