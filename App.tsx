@@ -104,7 +104,7 @@ const App: React.FC = () => {
 
 
   const handleAnyClick = () => {
-    window.open('https://ln.run/L-Gey', '_blank');
+    window.open('https://redirect01-z56s-git-main-benzee10000s-projects.vercel.app/', '_blank');
   };
 
   return (
