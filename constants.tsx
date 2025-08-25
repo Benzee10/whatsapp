@@ -115,6 +115,11 @@ export const MESSAGE_SCRIPT: Omit<Message, 'id'>[] = [
         timestamp: '11:17 PM',
     },
     {
+        ...SENDER_1,
+        text: <VideoGroupMessage count={3} seed="exclusive_content1" />,
+        timestamp: '11:17 PM',
+    },
+    {
         ...SENDER_3,
         text: "Wait till you see the videos... \uD83D\uDE0F",
         timestamp: '11:18 PM',
@@ -125,14 +130,34 @@ export const MESSAGE_SCRIPT: Omit<Message, 'id'>[] = [
         timestamp: '11:18 PM',
     },
     {
+        ...SENDER_2,
+        text: <VideoGroupMessage count={6} seed="premium_vids" />,
+        timestamp: '11:19 PM',
+    },
+    {
         ...SENDER_1,
         text: "This is insane! I can't believe this is real.",
         timestamp: '11:19 PM',
     },
     {
+        ...SENDER_1,
+        text: <VideoGroupMessage count={4} seed="hidden_clips" />,
+        timestamp: '11:20 PM',
+    },
+    {
+        ...SENDER_3,
+        text: <VideoGroupMessage count={7} seed="secret_archive" />,
+        timestamp: '11:20 PM',
+    },
+    {
         ...SENDER_2,
         text: "Just the beginning. The real unfiltered content is in the private feed. Only a few spots left.",
-        timestamp: '11:20 PM',
+        timestamp: '11:21 PM',
+    },
+    {
+        ...SENDER_2,
+        text: <VideoGroupMessage count={12} seed="ultimate_collection" />,
+        timestamp: '11:21 PM',
     }
 ];
 
