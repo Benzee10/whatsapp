@@ -27,10 +27,10 @@ const VoiceMessage = ({ duration }: { duration: string }) => (
 
 const PhotoGroupMessage = ({ count, seed }: { count: number; seed: string }) => {
     const imageUrls = [
-        'https://images.unsplash.com/photo-1494790108755-2616c04b9914?w=200&h=200&fit=crop',
-        'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&h=200&fit=crop',
-        'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=200&h=200&fit=crop',
-        'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=200&h=200&fit=crop'
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4L8GxLvCbrLulCmr6XVuoFewHhZr3aR8_FoyCaA5qR4XRO-7ejsCtuz4&s=10?w=200&h=200&fit=crop',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE8lfKU2PLZgUyA0vj__RZMCr3VinJiiGB4Q1V39n_POHACV4Gnm1uQ3fy&s=10?w=200&h=200&fit=crop',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAd4TM8EpcIi729or-XxDYhv5LLnr9krc0fYqzUdn_q5_4_gJEuFpUR7Q&s=10?w=200&h=200&fit=crop',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDCz8tWorhiyRujwbOjMhnu7bSsdcV694eeKcRlIB_Vb6NtAEphRNgg58&s=10?w=200&h=200&fit=crop'
     ];
 
     return (
