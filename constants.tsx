@@ -84,21 +84,21 @@ const SENDER_1 = {
     sender: 'other' as const,
     senderName: RANDOM_NUMBER_1,
     senderColor: 'text-purple-500',
-    avatar: 'https://picsum.photos/seed/female1/200/200',
+    avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8rJ9vLjbeuFgykZK-0skLIcHrGBs5Ef94Izo7VSlcjXN-YL6qLvFb3-hB&s=10',
 };
 
 const SENDER_2 = {
     sender: 'other' as const,
     senderName: RANDOM_NUMBER_2,
     senderColor: 'text-green-500',
-    avatar: 'https://picsum.photos/seed/male1/200/200',
+    avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxirzTWp5HDqGIWz2XCbhUszD0vuF_r66D-tmn_wAklIsa8rw9TUXDsvI&s=10',
 };
 
 const SENDER_3 = {
     sender: 'other' as const,
     senderName: RANDOM_NUMBER_3,
     senderColor: 'text-blue-500',
-    avatar: 'https://picsum.photos/seed/female2/200/200',
+    avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-LHZZ96ZGRpPFQYFvtgqHKORTSO2ze2sf_kfLskUlsmUDiJRl130y6Xg&s=10',
 };
 
 export const MESSAGE_SCRIPT: Omit<Message, 'id'>[] = [
