@@ -1,62 +1,4 @@
-
 import React from 'react';
-
-interface HeaderProps {
-  groupInfo: {
-    name: string;
-    avatar: string;
-    members: string;
-  };
-}
-
-const Header: React.FC<HeaderProps> = ({ groupInfo }) => {
-  return (
-    <div className="bg-[#075E54] text-white px-4 py-3 flex items-center justify-between">
-      <div className="flex items-center">
-        <button className="mr-3">
-          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
-          </svg>
-        </button>
-        <img 
-          src={groupInfo.avatar} 
-          alt={groupInfo.name} 
-          className="w-10 h-10 rounded-full mr-3" 
-        />
-        <div>
-          <div className="font-semibold text-white flex items-center">
-            {groupInfo.name}
-            <span className="bg-red-500 text-white text-xs rounded-full px-1.5 py-0.5 ml-2 min-w-[20px] text-center">18</span>
-            <div className="flex ml-2">
-              <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-              <div className="w-2 h-2 bg-blue-400 rounded-full ml-1"></div>
-            </div>
-          </div>
-          <div className="text-sm text-gray-200">{groupInfo.members}</div>
-        </div>
-      </div>
-      <div className="flex items-center space-x-4">
-        <button>
-          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-          </svg>
-        </button>
-        <button>
-          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M7 4V2C7 1.45 7.45 1 8 1S9 1.45 9 2V4H15V2C15 1.45 15.45 1 16 1S17 1.45 17 2V4H20C21.1 4 22 4.9 22 6V20C22 21.1 21.1 22 20 22H4C2.9 22 2 21.1 2 20V6C2 4.9 2.9 4 4 4H7ZM4 8V20H20V8H4Z"/>
-          </svg>
-        </button>
-        <button>
-          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-  );
-};
-
-export default Header;
 
 interface HeaderProps {
   groupInfo: {
@@ -84,13 +26,11 @@ const PhoneCallIcon = () => (
     </svg>
 );
 
-
 const MoreOptionsIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-white">
     <path fillRule="evenodd" d="M10.5 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm0 6a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" clipRule="evenodd" />
   </svg>
 );
-
 
 const Header: React.FC<HeaderProps> = ({ groupInfo }) => {
   return (
