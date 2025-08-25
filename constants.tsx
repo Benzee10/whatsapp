@@ -37,7 +37,7 @@ const PhotoGroupMessage = ({ count, seed }: { count: number; seed: string }) => 
         <div className="grid grid-cols-2 gap-1 rounded-lg overflow-hidden">
             {[...Array(Math.min(count, 4))].map((_, i) => (
                 <div key={i} className={`relative ${count > 4 && i === 3 ? 'brightness-50' : ''}`}>
-                    <img src={imageUrls[i] || `https://picsum.photos/seed/${seed}${i}/200/200`} className="w-full h-full object-cover" alt={`photo ${i + 1}`} />
+                    <img src={imageUrls[i] || `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQie9i0r7RHBOEtDjS-UnnddqqVXsVqK574Ami7K7XYqUhmLeqL8LoODWg&s=10`} className="w-full h-full object-cover" alt={`photo ${i + 1}`} />
                     {count > 4 && i === 3 && (
                         <div className="absolute inset-0 flex items-center justify-center text-white text-3xl font-bold">
                             +{count - 3}
