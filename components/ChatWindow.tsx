@@ -34,17 +34,17 @@ const JoinGroupOverlay = ({ onJoinClick }: { onJoinClick: () => void }) => (
         {/* Member Avatars */}
         <div className="flex justify-center items-center mb-8 -space-x-2">
           <img 
-            src="https://picsum.photos/seed/member1/40/40" 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_LlmiQuoxyVY90_y9NqtZ7vuO8ZzJG0j5JlU4pWPopFLmE0TjTgZDYyI&s=10" 
             alt="Member" 
             className="w-12 h-12 rounded-full border-2 border-white"
           />
           <img 
-            src="https://picsum.photos/seed/member2/40/40" 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJV2XHAUTvnd_MjP8ni23c_Bce4lcl6ivVEaXj5WOlhytV1DsceIqcFvM&s=10" 
             alt="Member" 
             className="w-12 h-12 rounded-full border-2 border-white"
           />
           <img 
-            src="https://picsum.photos/seed/member3/40/40" 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7YclcvudcKJKkVKcmED-5H0Zvr6_DggzOmw&s" 
             alt="Member" 
             className="w-12 h-12 rounded-full border-2 border-white"
           />
