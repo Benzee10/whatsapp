@@ -30,19 +30,19 @@ const MicIcon = () => (
 
 const MessageInput: React.FC = () => {
   return (
-    <div className="bg-[#F0F0F0] p-2 flex items-center space-x-2">
-      <div className="flex-grow flex items-center bg-white rounded-full px-4 py-2">
+    <div className="bg-[#F0F0F0] p-3 flex items-center space-x-3">
+      <div className="flex-grow flex items-center bg-white rounded-full px-4 py-3 shadow-sm">
         <SmileyIcon />
         <input
           type="text"
           placeholder="Message"
           disabled
-          className="bg-transparent flex-grow mx-2 text-gray-700 outline-none placeholder-gray-400"
+          className="bg-transparent flex-grow mx-3 text-gray-700 outline-none placeholder-gray-400"
         />
         <PaperclipIcon />
         <CameraIcon />
       </div>
-      <button className="bg-[#128C7E] w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+      <button className="bg-[#075E54] w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
         <MicIcon />
       </button>
     </div>

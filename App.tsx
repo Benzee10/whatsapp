@@ -102,16 +102,12 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen p-4" onClick={handleAnyClick}>
-      <div className="w-full max-w-md h-full sm:h-[90vh] sm:max-h-[800px] flex flex-col bg-[#E5DDD5] shadow-2xl rounded-lg overflow-hidden relative" onClick={handleAnyClick}>
+    <div className="flex justify-center items-center h-screen p-4 bg-gray-100" onClick={handleAnyClick}>
+      <div className="w-full max-w-md h-full sm:h-[90vh] sm:max-h-[800px] flex flex-col bg-white shadow-2xl rounded-lg overflow-hidden relative" onClick={handleAnyClick}>
         {!showShareGate && (
             <>
                 <Header groupInfo={GROUP_INFO} />
-                <div 
-                  className="flex-grow overflow-hidden relative min-h-0"
-                  style={{ backgroundImage: `url(${WHATSAPP_BG_URL})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-                >
-                  <div className="absolute inset-0 bg-black bg-opacity-5" />
+                <div className="flex-grow overflow-hidden relative min-h-0">
                   <ChatWindow messages={messages} typingAvatar={typingAvatar} showJoinAction={showJoinAction} onJoinClick={handleJoinClick} />
                 </div>
                 <MessageInput />

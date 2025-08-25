@@ -47,13 +47,10 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ messages, typingAvatar, showJoi
 
   return (
     <>
-      <div ref={scrollRef} className="h-full overflow-y-auto px-4 pt-4 pb-2 flex flex-col" onClick={handleClick}>
-         <div className="bg-[#E1F2FB] self-center text-center text-sm text-[#597883] rounded-md px-3 py-1 mb-4 shadow">
-          TODAY
-        </div>
+      <div ref={scrollRef} className="h-full overflow-y-auto px-4 pt-4 pb-2 flex flex-col bg-[#E5DDD5]" onClick={handleClick}>
         {messages.map(msg =>
           msg.type === 'system' ? (
-            <div key={msg.id} className="bg-[#E1F2FB] self-center text-center text-sm text-[#597883] rounded-md px-3 py-1 my-2 shadow">
+            <div key={msg.id} className="bg-[#FFFBF3] self-center text-center text-sm text-[#8696A0] rounded-md px-4 py-2 my-3 shadow-sm border border-[#E3E3E3] max-w-xs">
               {msg.text}
             </div>
           ) : (

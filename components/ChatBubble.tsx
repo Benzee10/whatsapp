@@ -10,11 +10,11 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({ message }) => {
   const isMe = message.sender === 'me';
 
   return (
-    <div className={`flex w-full mb-2 ${isMe ? 'justify-end' : 'justify-start items-start'}`}>
+    <div className={`flex w-full mb-3 ${isMe ? 'justify-end' : 'justify-start items-start'}`}>
       {!isMe && message.avatar && (
-        <img src={message.avatar} alt={message.senderName || ''} className="w-8 h-8 rounded-full mr-3" />
+        <img src={message.avatar} alt={message.senderName || ''} className="w-8 h-8 rounded-full mr-3 flex-shrink-0" />
       )}
-      <div className={`relative max-w-xs md:max-w-md px-3 py-2 rounded-lg shadow ${isMe ? 'bg-[#DCF8C6]' : 'bg-white'}`}>
+      <div className={`relative max-w-xs md:max-w-md px-3 py-2 rounded-lg shadow-sm ${isMe ? 'bg-[#DCF8C6]' : 'bg-white'}`}>
         {!isMe && message.senderName && (
           <div className={`text-sm font-bold mb-1 ${message.senderColor || 'text-gray-600'}`}>
             {message.senderName}
@@ -23,8 +23,8 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({ message }) => {
         <div className="text-gray-800 text-sm break-words">
           {message.text}
         </div>
-        <div className="text-right text-xs text-gray-400 mt-1">
-          {message.timestamp}
+        <div className="text-right text-xs text-gray-400 mt-1 flex items-center justify-end">
+          <span className="mr-1">{message.timestamp}</span>
           {isMe && <ReadReceipts />}
         </div>
       </div>
