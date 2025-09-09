@@ -24,8 +24,17 @@
       .touch-pan-y { touch-action: pan-y; }
       .safe-area-top { padding-top: env(safe-area-inset-top); }
     </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react": "https://esm.sh/react@^19.1.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/"
+  }
+}
+</script>
 </head>
-  <body class="bg-black">
+  <body class="bg-gray-200">
     <div id="root"></div>
     <script type="module" src="./index.tsx"></script>
   </body>
