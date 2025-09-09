@@ -8,6 +8,10 @@ channel = "stable-25_05"
 run = ["sh", "-c", "npm run dev"]
 
 [[ports]]
+localPort = 5000
+externalPort = 80
+
+[[ports]]
 localPort = 5173
 externalPort = 3000
 
@@ -27,10 +31,10 @@ args = "dev-server"
 name = "dev-server"
 author = "agent"
 
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "VITE_ALLOWED_HOSTS=\"effb4a6a-7a34-438b-882b-62ea514a3024-00-2itxgzs2e7m2c.worf.replit.dev,b81d5552-109d-41e7-a8cf-88bc6e44f518-00-2j0e85kcj66na.picard.replit.dev\" npm run dev"
-waitForPort = 5173
-
 [workflows.workflow.metadata]
 outputType = "webview"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npx vite --host 0.0.0.0 --port 5000 --force"
+waitForPort = 5000
