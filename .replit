@@ -36,5 +36,5 @@ outputType = "webview"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "VITE_HOST=0.0.0.0 VITE_PORT=5000 npx vite --host 0.0.0.0 --port 5000 --force"
+args = "HMR_PORT=5000 HMR_HOST=0.0.0.0 VITE_HOST=0.0.0.0 VITE_PORT=5000 npx vite --host 0.0.0.0 --port 5000 --force"
 waitForPort = 5000
