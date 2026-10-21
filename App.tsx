@@ -98,7 +98,7 @@ const App: React.FC = () => {
 
   const handleShareClick = () => {
     const message = encodeURIComponent(
-        `You've been invited to the Matured mind group. Don't miss out: https://whatsapplinkhub.vercel.app/`
+        `You've been invited to the Matured mind group. Don't miss out: https://xibabes.pages.dev`
     );
     window.open(`https://api.whatsapp.com/send?text=${message}`);
     setShareCount(prev => Math.min(prev + 1, 5));
