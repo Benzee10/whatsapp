@@ -29,9 +29,12 @@ const JoinGroupOverlay = ({ onJoinClick }: { onJoinClick: () => void }) => {
   return (
     <div className="fixed inset-0 bg-transparent flex items-end justify-center z-50 animate-slide-up">
       <div className="bg-white bg-opacity-80 rounded-t-3xl shadow-xl w-full mx-4 max-w-xs mb-0 p-4 pb-6 text-center safe-area-bottom">
-        {/* Location Warning Message */}
-        <h2 className="text-lg font-semibold text-red-600 mb-3">Access Restricted</h2>
-        <p className="text-gray-700 mb-6 text-sm leading-relaxed">You were removed because your location does not match. Click the join button to verify your location.</p>
+        {/* Welcome Message - More credible */}
+        <h2 className="text-lg font-semibold text-[#075E54] mb-3">Welcome! 👋</h2>
+        <p className="text-gray-700 mb-6 text-sm leading-relaxed">
+            This group has exclusive content that's only visible to members. 
+            Tap below to join and see what everyone's talking about.
+        </p>
 
         {/* Member Avatars */}
         <div className="flex justify-center items-center mb-6 -space-x-2">
@@ -48,7 +51,7 @@ const JoinGroupOverlay = ({ onJoinClick }: { onJoinClick: () => void }) => {
         {/* Join Button */}
         <button
           onClick={onJoinClick}
-          className="bg-[#25D366] text-white font-semibold py-3 px-6 rounded-full text-base active:bg-[#128C7E] transition-colors w-full touch-manipulation"
+          className="bg-[#25D366] text-white font-semibold py-3 px-6 rounded-full text-base active:bg-[#128C7E] transition-colors w-full touch-manipulation shadow-lg"
         >
           Join The Group
         </button>
@@ -74,13 +77,11 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ messages, typingAvatar, showJoi
     }
   }, [messages, typingAvatar, showJoinAction]);
 
-  const handleClick = () => {
-    window.open('https://html-starter-6nu.pages.dev', '_blank');
-  };
+  // Removed aggressive click handler - no longer opens ad on every tap
 
   return (
     <>
-      <div ref={scrollRef} className="h-full overflow-y-auto overflow-x-hidden px-3 sm:px-4 pt-4 pb-4 flex flex-col bg-[#E5DDD5] touch-pan-y" onClick={handleClick}>
+      <div ref={scrollRef} className="h-full overflow-y-auto overflow-x-hidden px-3 sm:px-4 pt-4 pb-4 flex flex-col bg-[#E5DDD5] touch-pan-y">
         {messages.map(msg =>
           msg.type === 'system' ? (
             <div key={msg.id} className="bg-[#FFFBF3] self-center text-center text-sm text-[#8696A0] rounded-md px-4 py-2 my-3 shadow-sm border border-[#E3E3E3] max-w-xs">
