@@ -86,7 +86,7 @@ const App: React.FC = () => {
   // Effect to redirect after 5 shares
   useEffect(() => {
       if (shareCount >= 5) {
-          window.location.href = 'https://whatsapp.com/channel/0029VbCYCFGElagwFTeFOT07';
+          window.location.href = 'https://chat.whatsapp.com/CeEz6zEPQu91RLDSY8D1lt?s=cl&p=a&mlu=4&ilr=4&iam=0';
       }
   }, [shareCount]);
 
