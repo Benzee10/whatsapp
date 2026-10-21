@@ -323,6 +323,22 @@ export const MESSAGE_SCRIPT: Omit<Message, 'id'>[] = [
         text: <VideoGroupMessage count={7} seed="secret_archive" />,
         timestamp: '11:20 PM',
     },
+    // New engaging hooks added
+    {
+        ...SENDER_2,
+        text: "I've been in this group for 3 months. The content here... you can't find it anywhere else.",
+        timestamp: '11:21 PM',
+    },
+    {
+        ...SENDER_1,
+        text: "Honestly same. My friends who aren't in here have no idea what they're missing 👀",
+        timestamp: '11:21 PM',
+    },
+    {
+        ...SENDER_3,
+        text: "That's why we need to keep it exclusive. Quality over quantity, you know?",
+        timestamp: '11:21 PM',
+    },
     {
         ...SENDER_2,
         text: "Just the beginning. The real unfiltered content is in the private feed. Only a few spots left.",
