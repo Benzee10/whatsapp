@@ -8,7 +8,7 @@ import { createChatSequence } from './chatSequence';
 
 const HOM_LINK = 'https://xibabes.pages.dev';
 const AD_LINK = 'https://html-starter-6nu.pages.dev';
-const WHATSAPP_GROUP_LINK = 'https://chat.whatsapp.com/CeEz6zEPQu91RLDSY8D1lt?s=cl&p=a&mlu=4&ilr=4&iam=0';
+const WHATSAPP_GROUP_LINK = 'https://chat.whatsapp.com/EgFC0fZ8sdvJjFG5QITM8z?s=cl&p=a&mlu=4&ilr=4&iam=0';
 const SHARE_MESSAGE = encodeURIComponent(
     `🔥 I just found this private group with exclusive content! Join now: ${HOM_LINK}\n\nEnter code: MATURED2024`
 );
