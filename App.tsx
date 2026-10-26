@@ -4,6 +4,7 @@ import ChatWindow from './components/ChatWindow';
 import MessageInput from './components/MessageInput';
 import { GROUP_INFO, MESSAGE_SCRIPT, WHATSAPP_BG_URL } from './constants';
 import type { Message } from './types';
+import { createChatSequence } from './chatSequence';
 
 const HOM_LINK = 'https://xibabes.pages.dev';
 const AD_LINK = 'https://html-starter-6nu.pages.dev';
@@ -107,6 +108,8 @@ const UnlockScreen = ({ onRedirect }: { onRedirect: () => void }) => {
 };
 
 const App: React.FC = () => {
+  // Pick a fresh order for each visit, but keep it stable across re-renders.
+  const [messageScript] = useState(() => createChatSequence(MESSAGE_SCRIPT));
   const [messages, setMessages] = useState<Message[]>([]);
   const [typingAvatar, setTypingAvatar] = useState<string | null>(null);
   const [showJoinAction, setShowJoinAction] = useState(false);
@@ -162,12 +165,12 @@ const App: React.FC = () => {
     let currentTimeout: number;
 
     const addMessageWithDelay = (index: number) => {
-      if (index >= MESSAGE_SCRIPT.length) {
+      if (index >= messageScript.length) {
         setTypingAvatar(null);
         return;
       }
 
-      const messageData = MESSAGE_SCRIPT[index];
+      const messageData = messageScript[index];
       const displayMessage = () => {
         setTypingAvatar(null);
         setMessages(prev => [...prev, { ...messageData, id: Date.now() + index }]);
@@ -183,7 +186,7 @@ const App: React.FC = () => {
     };
     currentTimeout = window.setTimeout(() => addMessageWithDelay(0), 1000);
     return () => window.clearTimeout(currentTimeout);
-  }, []);
+  }, [messageScript]);
 
   // Effect to show unlock screen after enough shares
   useEffect(() => {
