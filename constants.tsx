@@ -159,26 +159,29 @@ const allImageUrls = [
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5PMHi_5Kl3X2ucjuo7D0KafekF10godIfMg&usqp=CAU'
 ];
 
+// Images are picked once per seed and cached, so a photo/video group keeps the
+// same pictures while the conversation keeps streaming in (no flickering), but
+// every new visit still gets a fresh, random selection.
+const imageCache = new Map<string, string[]>();
+
 const getRandomImages = (seed: string, count: number) => {
-    // Create a hash from the seed combined with current timestamp for true randomness
-    let hash = 0;
-    for (let i = 0; i < seed.length; i++) {
-        const char = seed.charCodeAt(i);
-        hash = ((hash << 5) - hash) + char;
-        hash = hash & hash; // Convert to 32-bit integer
+    const size = Math.min(count, 4);
+    const cacheKey = `${seed}:${size}`;
+    const cached = imageCache.get(cacheKey);
+    if (cached) {
+        return cached;
     }
-    
-    // Add current timestamp and random factor for true randomness each time
-    const randomSeed = hash + Date.now() + Math.random() * 10000;
-    
-    // Shuffle the array using Fisher-Yates algorithm with true randomness
+
+    // Shuffle the array using Fisher-Yates algorithm
     const shuffled = [...allImageUrls];
     for (let i = shuffled.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
-    
-    return shuffled.slice(0, count);
+
+    const picked = shuffled.slice(0, size);
+    imageCache.set(cacheKey, picked);
+    return picked;
 };
 
 const PhotoGroupMessage = ({ count, seed }: { count: number; seed: string }) => {
